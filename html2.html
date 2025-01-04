@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapier Chatbot Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+        }
+        zapier-interfaces-chatbot-embed {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Your Zapier Chatbot (Standard Embed)</h1>
+
+        <!-- Embed Zapier Chatbot using Standard Script and Embed -->
+        <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
+        <zapier-interfaces-chatbot-embed 
+            is-popup="false" 
+            chatbot-id="cm5fpuq4a001bwy35xr8xheco" 
+            height="600px" 
+            width="400px">
+        </zapier-interfaces-chatbot-embed>
+
+        <!-- Standard Iframe Embed for Zapier -->
+        <iframe 
+            src="https://interfaces.zapier.com/embed/chatbot/cm5fpuq4a001bwy35xr8xheco" 
+            height="600px" 
+            width="400px" 
+            allow="clipboard-write *" 
+            style="border: none;">
+        </iframe>
+    </div>
+</body>
+</html>
