@@ -3,46 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zapier Chatbot Floating Button</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        .chatbot-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-    </style>
+    <title>Zapier Chatbot</title>
 </head>
 <body>
-    <h1>Zapier Chatbot Floating Button Test</h1>
-
-    <!-- Floating Chatbot Button -->
-    <button class="chatbot-button" onclick="openChatbot()">💬</button>
+    <h1 style="text-align: center;">Zapier Chatbot Test</h1>
 
     <!-- Zapier Chatbot Embed -->
     <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
@@ -50,12 +14,5 @@
         is-popup="true" 
         chatbot-id="cm5fpuq4a001bwy35xr8xheco">
     </zapier-interfaces-chatbot-embed>
-
-    <script>
-        function openChatbot() {
-            const chatbot = document.querySelector('zapier-interfaces-chatbot-embed');
-            chatbot.setAttribute('is-popup-open', 'true');
-        }
-    </script>
 </body>
 </html>
