@@ -9,44 +9,69 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            height: 100vh;
+        }
+        .chatbot-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            font-size: 24px;
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            text-align: center;
+            z-index: 1000;
         }
-        .container {
-            width: 100%;
-            max-width: 900px;
-            padding: 20px;
+        .chatbot-popup {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 400px;
+            height: 600px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            background: white;
+            display: none;
+            z-index: 999;
         }
-        zapier-interfaces-chatbot-embed {
-            margin-top: 20px;
+        .chatbot-popup.open {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Test Your Zapier Chatbot (Standard Embed)</h1>
+    <h1 style="text-align: center;">Zapier Chatbot Floating Button Test</h1>
 
-        <!-- Embed Zapier Chatbot using Standard Script and Embed -->
-        <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
-        <zapier-interfaces-chatbot-embed 
-            is-popup="false" 
-            chatbot-id="cm5fpuq4a001bwy35xr8xheco" 
-            height="600px" 
-            width="400px">
-        </zapier-interfaces-chatbot-embed>
+    <!-- Floating Chatbot Button -->
+    <button class="chatbot-button" onclick="toggleChatbot()">💬</button>
 
-        <!-- Standard Iframe Embed for Zapier -->
+    <!-- Chatbot Pop-Up -->
+    <div class="chatbot-popup" id="chatbot-popup">
         <iframe 
             src="https://interfaces.zapier.com/embed/chatbot/cm5fpuq4a001bwy35xr8xheco" 
-            height="600px" 
-            width="400px" 
+            height="100%" 
+            width="100%" 
             allow="clipboard-write *" 
             style="border: none;">
         </iframe>
     </div>
+
+    <!-- Include Zapier Embed Script (for reference if needed in other setups) -->
+    <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
+
+    <script>
+        function toggleChatbot() {
+            const chatbotPopup = document.getElementById('chatbot-popup');
+            chatbotPopup.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
