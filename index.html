@@ -5,100 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zapier Chatbot Test</title>
     <style>
-        /* Style for the floating button */
-        #floatingButton {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: #0078d7;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-size: 24px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
             text-align: center;
-            line-height: 60px;
-            cursor: pointer;
-            z-index: 1001;
         }
-
-        #floatingButton:hover {
-            background-color: #005a9e;
-        }
-
-        /* Chatbot popup overlay styles */
-        #chatbotOverlay {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            width: 400px;
-            height: 600px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        #chatbotOverlay iframe {
+        .container {
             width: 100%;
-            height: 100%;
-            border: none;
+            max-width: 900px;
+            padding: 20px;
         }
-
-        /* Close button inside the chatbot overlay */
-        #closeChatbot {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #ff5c5c;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        #closeChatbot:hover {
-            background-color: #e04343;
+        zapier-interfaces-chatbot-embed {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Zapier Chatbot Test Page</h1>
-    <p>Click the floating button to open the chatbot overlay:</p>
+    <div class="container">
+        <h1>Test Your Zapier Chatbot (Standard Embed)</h1>
 
-    <!-- Floating Button -->
-    <button id="floatingButton">💬</button>
+        <!-- Embed Zapier Chatbot using Standard Script and Embed -->
+        <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
+        <zapier-interfaces-chatbot-embed 
+            is-popup="false" 
+            chatbot-id="cm5fpuq4a001bwy35xr8xheco" 
+            height="600px" 
+            width="400px">
+        </zapier-interfaces-chatbot-embed>
 
-    <!-- Chatbot Overlay -->
-    <div id="chatbotOverlay">
-        <button id="closeChatbot">✕</button>
-        <iframe src="https://dfbf-176-29-161-114.ngrok-free.app/embed/chatbot/cm5fpuq4a001bwy35xr8xheco" allow="clipboard-write *"></iframe>
+        <!-- Standard Iframe Embed for Zapier -->
+        <iframe 
+            src="https://interfaces.zapier.com/embed/chatbot/cm5fpuq4a001bwy35xr8xheco" 
+            height="600px" 
+            width="400px" 
+            allow="clipboard-write *" 
+            style="border: none;">
+        </iframe>
     </div>
-
-    <!-- Script to handle chatbot toggle -->
-    <script>
-        const floatingButton = document.getElementById('floatingButton');
-        const chatbotOverlay = document.getElementById('chatbotOverlay');
-        const closeChatbot = document.getElementById('closeChatbot');
-
-        // Show the chatbot overlay when the floating button is clicked
-        floatingButton.addEventListener('click', () => {
-            chatbotOverlay.style.display = 'block';
-        });
-
-        // Hide the chatbot overlay when the close button is clicked
-        closeChatbot.addEventListener('click', () => {
-            chatbotOverlay.style.display = 'none';
-        });
-    </script>
 </body>
 </html>
